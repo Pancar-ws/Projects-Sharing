@@ -24,7 +24,7 @@ Mewujudkan sinergi antar mahasiswa untuk menciptakan karya inovatif, bermanfaat,
 
 | Nama Mahasiswa       | Peran       | Kontak                |
 | ---------------------| ----------- | --------------------- |
-| Abi Musa Abdurrahmah | Kolaborator | [email/username]      |
+| Abi Musa Abdurrahman | Kolaborator | [email/username]      |
 | Pancar Wahyu Setiabi | Kolaborator | pancarwahyu@gmail.com |
 
 ## 📂 Struktur Repositori
