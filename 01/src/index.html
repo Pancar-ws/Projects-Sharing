@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greentrust Website Wireframe</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+
+        .wireframe-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        .wireframe-section {
+            border-bottom: 2px solid #e9ecef;
+            padding: 40px 20px;
+            position: relative;
+        }
+
+        .section-label {
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            background: #007bff;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .wireframe-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            border-bottom: 1px solid #dee2e6;
+            background: #fff;
+        }
+
+        .logo-placeholder {
+            width: 150px;
+            height: 40px;
+            background: #28a745;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-item {
+            padding: 8px 16px;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-item:hover {
+            background: #28a745;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .hero-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            min-height: 500px;
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            font-weight: 800;
+            color: #2d3748;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            color: #4a5568;
+            margin-bottom: 30px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn-primary {
+            background: #28a745;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background: #218838;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #28a745;
+            border: 2px solid #28a745;
+            padding: 13px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: #28a745;
+            color: white;
+        }
+
+        .hero-visual {
+            height: 400px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-visual::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(255,255,255,0.1) 10px,
+                rgba(255,255,255,0.1) 20px
+            );
+            animation: float 10s linear infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateX(-100px) translateY(-100px); }
+            100% { transform: translateX(100px) translateY(100px); }
+        }
+
+        .stats-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 30px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 36px;
+            font-weight: 800;
+            color: #28a745;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: #6c757d;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: #28a745;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: white;
+            font-size: 24px;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 40px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: #28a745;
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-content {
+            flex: 1;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin: 0 30px;
+            position: relative;
+        }
+
+        .timeline-dot {
+            width: 20px;
+            height: 20px;
+            background: #28a745;
+            border-radius: 50%;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .gallery-item {
+            aspect-ratio: 16/9;
+            background: #e9ecef;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6c757d;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .gallery-item::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .gallery-item:hover::after {
+            left: 100%;
+        }
+
+        .contact-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #dee2e6;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: #28a745;
+            box-shadow: 0 0 0 3px rgba(40,167,69,0.1);
+        }
+
+        .contact-info {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 8px;
+        }
+
+        .footer {
+            background: #2d3748;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 0;
+        }
+
+        .mobile-nav {
+            display: none;
+            background: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .mobile-nav {
+                display: block;
+            }
+            
+            .hero-section {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                text-align: center;
+            }
+            
+            .hero-content h1 {
+                font-size: 36px;
+            }
+            
+            .contact-form {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline::before {
+                left: 30px;
+            }
+            
+            .timeline-item {
+                flex-direction: row;
+                padding-left: 60px;
+            }
+            
+            .timeline-dot {
+                left: 30px;
+            }
+        }
+
+        .animation-demo {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .animation-demo.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .page-tabs {
+            display: flex;
+            justify-content: center;
+            margin: 40px 0;
+            gap: 10px;
+        }
+
+        .tab-button {
+            padding: 10px 20px;
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .tab-button.active {
+            background: #28a745;
+            color: white;
+            border-color: #28a745;
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="wireframe-container">
+        <!-- Navigation -->
+        <nav class="wireframe-nav">
+            <div class="logo-placeholder">GREENTRUST</div>
+            <div class="nav-menu">
+                <a href="#" class="nav-item">Beranda</a>
+                <a href="#" class="nav-item">Tentang Kami</a>
+                <a href="#" class="nav-item">Solusi Kami</a>
+                <a href="#" class="nav-item">Dampak</a>
+                <a href="#" class="nav-item">Edukasi</a>
+                <a href="#" class="nav-item">Bergabung</a>
+            </div>
+            <button class="mobile-nav">☰ Menu</button>
+        </nav>
+
+        <!-- Page Navigation Tabs -->
+        <div class="page-tabs">
+            <button class="tab-button active" onclick="showPage('home')">Beranda</button>
+            <button class="tab-button" onclick="showPage('about')">Tentang</button>
+            <button class="tab-button" onclick="showPage('solution')">Solusi</button>
+            <button class="tab-button" onclick="showPage('impact')">Dampak</button>
+            <button class="tab-button" onclick="showPage('education')">Edukasi</button>
+            <button class="tab-button" onclick="showPage('contact')">Bergabung</button>
+        </div>
+
+        <!-- HOME PAGE -->
+        <div id="home" class="tab-content active">
+            <!-- Hero Section -->
+            <section class="wireframe-section">
+                <div class="section-label">HERO SECTION</div>
+                <div class="hero-section">
+                    <div class="hero-content animation-demo">
+                        <h1>Merevolusi Pengelolaan Rongsok Melalui Teknologi</h1>
+                        <p>Sistem IoT pintar yang mengubah cara komunitas mengelola sampah dan menciptakan nilai ekonomi berkelanjutan untuk semua.</p>
+                        <div class="cta-buttons">
+                            <button class="btn-primary">Pelajari Lebih Lanjut</button>
+                            <button class="btn-secondary">Lihat Dampak Kami</button>
+                        </div>
+                    </div>
+                    <div class="hero-visual">
+                        <div>
+                            📱 IoT Dashboard<br>
+                            ♻️ Smart Waste Management<br>
+                            🌱 Sustainable Impact
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Stats Section -->
+            <section class="wireframe-section">
+                <div class="section-label">VISUALISASI DAMPAK</div>
+                <div class="stats-section">
+                    <div class="stat-card animation-demo">
+                        <div class="stat-number">150+</div>
+                        <div class="stat-label">KG Rongsok Terkelola</div>
+                    </div>
+                    <div class="stat-card animation-demo">
+                        <div class="stat-number">15</div>
+                        <div class="stat-label">Keluarga Terdampak</div>
+                    </div>
+                    <div class="stat-card animation-demo">
+                        <div class="stat-number">3</div>
+                        <div class="stat-label">Komunitas Aktif</div>
+                    </div>
+                    <div class="stat-card animation-demo">
+                        <div class="stat-number">2 Tahun</div>
+                        <div class="stat-label">Pengembangan</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Features Section -->
+            <section class="wireframe-section">
+                <div class="section-label">FITUR UTAMA</div>
+                <div class="feature-grid">
+                    <div class="feature-card animation-demo">
+                        <div class="feature-icon">🔧</div>
+                        <h3>Teknologi IoT</h3>
+                        <p>Sistem monitoring real-time yang membantu optimalisasi pengumpulan dan pengolahan rongsok.</p>
+                    </div>
+                    <div class="feature-card animation-demo">
+                        <div class="feature-icon">💰</div>
+                        <h3>Dampak Ekonomi</h3>
+                        <p>Menciptakan peluang ekonomi baru bagi masyarakat melalui pengelolaan sampah yang efisien.</p>
+                    </div>
+                    <div class="feature-card animation-demo">
+                        <div class="feature-icon">🌍</div>
+                        <h3>Keberlanjutan</h3>
+                        <p>Solusi ramah lingkungan yang mendukung ekonomi sirkular dan pengurangan limbah.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ABOUT PAGE -->
+        <div id="about" class="tab-content">
+            <section class="wireframe-section">
+                <div class="section-label">TENTANG KAMI</div>
+                <div class="hero-section">
+                    <div class="hero-content">
+                        <h1>Cerita di Balik Greentrust</h1>
+                        <p>Dimulai dari keprihatinan terhadap pengelolaan sampah yang belum optimal, kami mengembangkan solusi teknologi yang dapat memberdayakan masyarakat dan menciptakan dampak positif bagi lingkungan.</p>
+                        <h3>Visi Kami</h3>
+                        <p>Menjadi platform terdepan dalam transformasi digital pengelolaan sampah untuk Indonesia yang berkelanjutan.</p>
+                        <h3>Misi Kami</h3>
+                        <p>Mengembangkan teknologi IoT yang mudah diakses, memberikan edukasi komprehensif, dan membangun ekosistem yang mendukung ekonomi sirkular.</p>
+                    </div>
+                    <div class="hero-visual">
+                        <div>
+                            👥 Tim Greentrust<br>
+                            🎯 Fokus pada Solusi<br>
+                            💡 Inovasi Berkelanjutan
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Team Section -->
+            <section class="wireframe-section">
+                <div class="section-label">TIM KAMI</div>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">👨‍💻</div>
+                        <h3>Tech Lead</h3>
+                        <p>Bertanggung jawab atas pengembangan sistem IoT dan integrasi teknologi.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🌱</div>
+                        <h3>Sustainability Expert</h3>
+                        <p>Memastikan setiap solusi berdampak positif terhadap lingkungan dan berkelanjutan.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🤝</div>
+                        <h3>Community Manager</h3>
+                        <p>Membangun hubungan dengan komunitas dan memfasilitasi adopsi teknologi.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- SOLUTION PAGE -->
+        <div id="solution" class="tab-content">
+            <section class="wireframe-section">
+                <div class="section-label">SOLUSI KAMI</div>
+                <div class="hero-section">
+                    <div class="hero-content">
+                        <h1>Teknologi IoT untuk Pengelolaan Rongsok</h1>
+                        <p>Sistem terintegrasi yang menggabungkan sensor pintar, aplikasi mobile, dan dashboard analitik untuk optimalisasi pengelolaan sampah komunitas.</p>
+                    </div>
+                    <div class="hero-visual">
+                        <div>
+                            📊 Real-time Monitoring<br>
+                            📱 Mobile App Interface<br>
+                            🔄 Automated Processing
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- How It Works -->
+            <section class="wireframe-section">
+                <div class="section-label">CARA KERJA</div>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">1️⃣</div>
+                        <h3>Pengumpulan Data</h3>
+                        <p>Sensor IoT mengumpulkan data real-time tentang volume, jenis, dan kondisi rongsok.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">2️⃣</div>
+                        <h3>Analisis Cerdas</h3>
+                        <p>Sistem AI menganalisis data untuk mengoptimalkan rute pengumpulan dan prediksi kebutuhan.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">3️⃣</div>
+                        <h3>Tindakan Otomatis</h3>
+                        <p>Notifikasi otomatis dan rekomendasi tindakan dikirim kepada pengelola dan masyarakat.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Technical Specs -->
+            <section class="wireframe-section">
+                <div class="section-label">SPESIFIKASI TEKNIS</div>
+                <div class="hero-visual" style="height: 300px;">
+                    <div>
+                        🔧 Arduino/ESP32 Controllers<br>
+                        📡 LoRa/WiFi Connectivity<br>
+                        ☁️ Cloud-based Analytics<br>
+                        📱 Cross-platform Mobile App
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- IMPACT PAGE -->
+        <div id="impact" class="tab-content">
+            <section class="wireframe-section">
+                <div class="section-label">DAMPAK NYATA</div>
+                <h1 style="text-align: center; margin-bottom: 40px;">Dokumentasi Perjalanan Proyek</h1>
+                
+                <!-- Timeline -->
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>Maret 2023 - Inisiasi Proyek</h3>
+                            <p>Penelitian awal dan identifikasi masalah pengelolaan sampah di komunitas lokal.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>Juni 2023 - Pengembangan Prototipe</h3>
+                            <p>Pembuatan prototipe pertama sistem IoT dan testing awal dengan komunitas.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>September 2023 - Pilot Project</h3>
+                            <p>Implementasi sistem di 3 lokasi pilot dengan monitoring intensif.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>Desember 2023 - Evaluasi & Optimasi</h3>
+                            <p>Analisis hasil pilot project dan perbaikan sistem berdasarkan feedback.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>2024 - Ekspansi & Dampak</h3>
+                            <p>Perluasan ke komunitas lain dan pencapaian target dampak ekonomi.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Gallery Section -->
+            <section class="wireframe-section">
+                <div class="section-label">GALERI DOKUMENTASI</div>
+                <h2 style="text-align: center; margin-bottom: 30px;">Sebelum & Sesudah</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item">📸 Area Sebelum Intervensi</div>
+                    <div class="gallery-item">📸 Proses Implementasi</div>
+                    <div class="gallery-item">📸 Hasil Akhir</div>
+                    <div class="gallery-item">📸 Komunitas Terlibat</div>
+                    <div class="gallery-item">📸 Teknologi Bekerja</div>
+                    <div class="gallery-item">📸 Dampak Ekonomi</div>
+                </div>
+            </section>
+
+            <!-- Testimonials -->
+            <section class="wireframe-section">
+                <div class="section-label">TESTIMONI</div>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">💬</div>
+                        <h3>Pak Agus - Ketua RT</h3>
+                        <p>"Greentrust membantu kami mengelola sampah dengan lebih efisien. Kini warga lebih terorganisir dan lingkungan lebih bersih."</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💬</div>
+                        <h3>Ibu Sari - Pengelola Waste</h3>
+                        <p>"Teknologi ini memberikan penghasilan tambahan untuk keluarga. Kami bisa memilah sampah dengan lebih baik."</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💬</div>
+                        <h3>Budi - Koordinator Komunitas</h3>
+                        <p>"Dashboard monitoring memudahkan kami untuk mengatur jadwal pengumpulan dan melihat progress secara real-time."</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- EDUCATION PAGE -->
+        <div id="education" class="tab-content">
+            <section class="wireframe-section">
+                <div class="section-label">PUSAT EDUKASI</div>
+                <div class="hero-section">
+                    <div class="hero-content">
+                        <h1>Pelajari Lebih Lanjut</h1>
+                        <p>Akses pengetahuan komprehensif tentang pengelolaan sampah, teknologi IoT, dan praktik berkelanjutan.</p>
+                    </div>
+                    <div class="hero-visual">
+                        <div>
+                            📚 Artikel & Panduan<br>
+                            🎥 Video Tutorial<br>
+                            📊 Infografis Interaktif
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Education Cards -->
+            <section class="wireframe-section">
+                <div class="section-label">KARTU EDUKASI</div>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">♻️</div>
+                        <h3>Dasar-dasar Daur Ulang</h3>
+                        <p>Memahami prinsip 3R (Reduce, Reuse, Recycle) dan implementasinya dalam kehidupan sehari-hari.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🏭</div>
+                        <h3>Pengelolaan Sampah Industri</h3>
+                        <p>Strategi dan teknologi untuk mengelola limbah industri dengan efisien dan ramah lingkungan.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🌱</div>
+                        <h3>Ekonomi Sirkular</h3>
+                        <p>Konsep dan implementasi sistem ekonomi yang berkelanjutan dan regeneratif.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📡</div>
+                        <h3>Teknologi IoT untuk Lingkungan</h3>
+                        <p>Penerapan Internet of Things dalam monitoring dan pengelolaan lingkungan.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🤝</div>
+                        <h3>Membangun Komunitas</h3>
+                        <p>Panduan praktis untuk mengorganisir dan memberdayakan komunitas peduli lingkungan.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💡</div>
+                        <h3>Inovasi Berkelanjutan</h3>
+                        <p>Tren terbaru dalam teknologi hijau dan solusi inovatif untuk tantangan lingkungan.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Interactive Quiz Section -->
+            <section class="wireframe-section">
+                <div class="section-label">KUIS INTERAKTIF</div>
+                <div class="hero-visual" style="height: 250px;">
+                    <div>
+                        🧠 "Seberapa Paham Kamu Tentang Daur Ulang?"<br>
+                        🎯 Quiz Interaktif dengan Skor<br>
+                        🏆 Leaderboard Komunitas
+                    </div>
+                </div>
+            </section>
+
+            <!-- Resource Library -->
+            <section class="wireframe-section">
+                <div class="section-label">PERPUSTAKAAN SUMBER DAYA</div>
+                <div class="gallery-grid">
+                    <div class="gallery-item">📋 Panduan PDF</div>
+                    <div class="gallery-item">🎥 Video Tutorial</div>
+                    <div class="gallery-item">📊 Infografis</div>
+                    <div class="gallery-item">📱 App Screenshots</div>
+                    <div class="gallery-item">📈 Laporan Dampak</div>
+                    <div class="gallery-item">🔗 Link Eksternal</div>
+                </div>
+            </section>
+        </div>
+
+        <!-- CONTACT PAGE -->
+        <div id="contact" class="tab-content">
+            <section class="wireframe-section">
+                <div class="section-label">BERGABUNG DENGAN KAMI</div>
+                <div class="hero-section">
+                    <div class="hero-content">
+                        <h1>Mari Berkolaborasi</h1>
+                        <p>Bergabunglah dengan gerakan transformasi digital pengelolaan sampah. Baik sebagai mitra, komunitas, atau individu yang peduli lingkungan.</p>
+                        <div class="cta-buttons">
+                            <button class="btn-primary">Menjadi Mitra</button>
+                            <button class="btn-secondary">Hubungi Kami</button>
+                        </div>
+                    </div>
+                    <div class="hero-visual">
+                        <div>
+                            🤝 Partnership Opportunities<br>
+                            🌐 Community Network<br>
+                            💼 Business Collaboration
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Form -->
+            <section class="wireframe-section">
+                <div class="section-label">FORMULIR KONTAK</div>
+                <div class="contact-form">
+                    <div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Nama Lengkap">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Organisasi/Perusahaan">
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control">
+                                <option>Pilih Jenis Kerjasama</option>
+                                <option>Kemitraan Bisnis</option>
+                                <option>Kolaborasi Komunitas</option>
+                                <option>Dukungan Teknis</option>
+                                <option>Media Partnership</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" rows="5" placeholder="Pesan Anda"></textarea>
+                        </div>
+                        <button class="btn-primary">Kirim Pesan</button>
+                    </div>
+                    <div class="contact-info">
+                        <h3>Informasi Kontak</h3>
+                        <p><strong>📧 Email:</strong> hello@greentrust.id</p>
+                        <p><strong>📱 WhatsApp:</strong> +62 812-3456-7890</p>
+                        <p><strong>📍 Alamat:</strong> Margasari, Jawa Tengah, Indonesia</p>
+                        <p><strong>🕒 Jam Operasional:</strong> Senin - Jumat, 09:00 - 17:00 WIB</p>
+                        
+                        <h3 style="margin-top: 30px;">Media Sosial</h3>
+                        <div style="display: flex; gap: 15px; margin-top: 15px;">
+                            <div style="padding: 10px; background: #1877f2; color: white; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;">f</div>
+                            <div style="padding: 10px; background: #1da1f2; color: white; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;">t</div>
+                            <div style="padding: 10px; background: #e4405f; color: white; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;">ig</div>
+                            <div style="padding: 10px; background: #0077b5; color: white; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;">in</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Partnership Opportunities -->
+            <section class="wireframe-section">
+                <div class="section-label">PELUANG KEMITRAAN</div>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🏢</div>
+                        <h3>Kemitraan Korporat</h3>
+                        <p>Kolaborasi dengan perusahaan untuk implementasi sistem pengelolaan sampah yang efisien.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🏛️</div>
+                        <h3>Kemitraan Pemerintah</h3>
+                        <p>Bekerja sama dengan pemerintah daerah untuk program smart city dan keberlanjutan.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎓</div>
+                        <h3>Kemitraan Akademis</h3>
+                        <p>Kolaborasi dengan universitas untuk penelitian dan pengembangan teknologi.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🌍</div>
+                        <h3>Kemitraan NGO</h3>
+                        <p>Bekerja sama dengan organisasi non-profit untuk dampak sosial yang lebih luas.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Community Stories -->
+            <section class="wireframe-section">
+                <div class="section-label">CERITA KOMUNITAS</div>
+                <div class="hero-visual" style="height: 200px;">
+                    <div>
+                        💭 "Bagikan Cerita Anda"<br>
+                        📝 User-Generated Content<br>
+                        🌟 Inspirasi dari Komunitas
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="section-label" style="top: 10px; background: #fff; color: #2d3748;">FOOTER</div>
+            <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
+                <div class="logo-placeholder" style="margin: 0 auto 20px; width: 200px;">GREENTRUST</div>
+                <p>Merevolusi pengelolaan rongsok melalui teknologi IoT untuk masa depan yang berkelanjutan.</p>
+                <div style="margin: 30px 0; display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
+                    <a href="#" style="color: #ccc; text-decoration: none;">Tentang Kami</a>
+                    <a href="#" style="color: #ccc; text-decoration: none;">Kebijakan Privasi</a>
+                    <a href="#" style="color: #ccc; text-decoration: none;">Syarat & Ketentuan</a>
+                    <a href="#" style="color: #ccc; text-decoration: none;">Kontak</a>
+                </div>
+                <p style="font-size: 14px; color: #9ca3af;">© 2024 Greentrust. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Page Navigation
+        function showPage(pageId) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.tab-content');
+            pages.forEach(page => page.classList.remove('active'));
+            
+            // Show selected page
+            document.getElementById(pageId).classList.add('active');
+            
+            // Update active tab
+            const tabs = document.querySelectorAll('.tab-button');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Reset animations
+            const animations = document.querySelectorAll('.animation-demo');
+            animations.forEach(el => el.classList.remove('visible'));
+            
+            // Trigger animations for visible page
+            setTimeout(() => {
+                const visibleAnimations = document.querySelectorAll('#' + pageId + ' .animation-demo');
+                visibleAnimations.forEach((el, index) => {
+                    setTimeout(() => {
+                        el.classList.add('visible');
+                    }, index * 100);
+                });
+            }, 100);
+        }
+
+        // Initialize animations on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const animations = document.querySelectorAll('#home .animation-demo');
+            animations.forEach((el, index) => {
+                setTimeout(() => {
+                    el.classList.add('visible');
+                }, index * 200);
+            });
+        });
+
+        // Intersection Observer for scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        });
+
+        document.querySelectorAll('.animation-demo').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Mobile menu toggle (placeholder)
+        document.querySelector('.mobile-nav').addEventListener('click', function() {
+            alert('Mobile menu akan menampilkan navigasi dalam format mobile-friendly');
+        });
+
+        // Interactive elements
+        document.querySelectorAll('.feature-card').forEach(card => {
+            card.addEventListener('click', function() {
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = 'scale(1)';
+                }, 150);
+            });
+        });
+
+        // Form validation placeholder
+        document.querySelectorAll('.btn-primary').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                this.style.background = '#1e7e34';
+                this.textContent = 'Terkirim ✓';
+                setTimeout(() => {
+                    this.style.background = '#28a745';
+                    this.textContent = 'Kirim Pesan';
+                }, 2000);
+            });
+        });
+    </script>
+</body>
+</html>
