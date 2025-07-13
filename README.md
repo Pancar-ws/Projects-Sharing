@@ -22,10 +22,10 @@ Mewujudkan sinergi antar mahasiswa untuk menciptakan karya inovatif, bermanfaat,
 
 ## 👥 Anggota Kolaborasi
 
-| Nama Mahasiswa | Peran       | Kontak           |
-| -------------- | ----------- | ---------------- |
-| Mahasiswa 1    | Kolaborator | [email/username] |
-| Mahasiswa 2    | Kolaborator | [email/username] |
+| Nama Mahasiswa       | Peran       | Kontak                |
+| ---------------------| ----------- | --------------------- |
+| Abi Musa Abdurrahmah | Kolaborator | [email/username]      |
+| Pancar Wahyu Setiabi | Kolaborator | pancarwahyu@gmail.com |
 
 ## 📂 Struktur Repositori
 
